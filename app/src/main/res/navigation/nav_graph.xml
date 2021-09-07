@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.esc.doglend.ui.fragments.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addDogPicFragment"
+            app:destination="@id/addDogPicFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.esc.doglend.ui.fragments.login.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.esc.doglend.ui.fragments.login.RegisterFragment"
+        android:label="register_fragment"
+        tools:layout="@layout/register_fragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.esc.doglend.ui.fragments.profiles.ProfileFragment"
+        android:label="profile_fragment"
+        tools:layout="@layout/profile_fragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_dogProfileFragment"
+            app:destination="@id/dogProfileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_addDogFragment"
+            app:destination="@id/addDogFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dogProfileFragment"
+        android:name="com.esc.doglend.ui.fragments.profiles.DogProfileFragment"
+        android:label="dog_profile_fragment"
+        tools:layout="@layout/dog_profile_fragment" >
+        <argument
+            android:name="dog"
+            app:argType="com.esc.doglend.entities.Dog"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDogFragment"
+        android:name="com.esc.doglend.ui.fragments.profiles.AddDogFragment"
+        android:label="add_dog_fragemnt"
+        tools:layout="@layout/add_dog_fragemnt" >
+        <action
+            android:id="@+id/action_addDogFragment_to_addDogPicFragment"
+            app:destination="@id/addDogPicFragment" />
+        <action
+            android:id="@+id/action_addDogFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addDogPicFragment"
+        android:name="com.esc.doglend.ui.fragments.profiles.AddDogPicFragment"
+        android:label="add_pic_dog_profile_fragment"
+        tools:layout="@layout/add_dog_pic_fragment" >
+        <action
+            android:id="@+id/action_addDogPicFragment_to_dogProfileFragment"
+            app:destination="@id/dogProfileFragment" />
+    </fragment>
+</navigation>

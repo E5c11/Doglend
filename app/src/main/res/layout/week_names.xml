@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/mon"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tue"/>
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/tue"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toEndOf="@id/mon"
+        app:layout_constraintEnd_toStartOf="@id/wed"/>
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/wed"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toEndOf="@id/tue"
+        app:layout_constraintEnd_toStartOf="@id/thu"/>
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/thu"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toEndOf="@id/wed"
+        app:layout_constraintEnd_toStartOf="@id/fri"/>
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/fri"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toEndOf="@id/thu"
+        app:layout_constraintEnd_toStartOf="@id/sat"/>
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/sat"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toEndOf="@id/fri"
+        app:layout_constraintEnd_toStartOf="@id/sun"/>
+    <include
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        android:id="@+id/sun"
+        android:layout_margin="2dp"
+        app:layout_constraintStart_toEndOf="@id/sat"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

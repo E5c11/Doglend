@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@id/end"
+        motion:duration="1000">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@id/browse"/>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@id/recrop"/>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="10"
+                motion:motionTarget="@id/crop"/>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="80"
+                motion:motionTarget="@id/browse"/>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="80"
+                motion:motionTarget="@id/recrop"/>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="80"
+                motion:motionTarget="@id/crop"/>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/browse"/>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/recrop"/>
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="100"
+                motion:motionTarget="@id/crop"/>
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/buttons_guide"
+            motion:layout_constraintTop_toBottomOf="@id/dog_crop_pp"/>
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/dog_banner"
+            motion:layout_constraintTop_toBottomOf="@id/browse"/>
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/browse"
+            android:text="browse"
+            motion:layout_constraintTop_toBottomOf="@id/buttons_guide"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/recrop"/>
+
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recrop"
+            android:text="recrop"
+            motion:layout_constraintTop_toBottomOf="@id/buttons_guide"
+            motion:layout_constraintStart_toEndOf="@id/browse"
+            motion:layout_constraintEnd_toStartOf="@id/crop"/>
+
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/crop"
+            android:text="crop"
+            motion:layout_constraintTop_toBottomOf="@id/buttons_guide"
+            motion:layout_constraintStart_toEndOf="@id/recrop"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:id="@+id/buttons_guide"
+            motion:layout_constraintTop_toBottomOf="@id/dog_banner"/>
+        <Constraint
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/dog_banner"
+            motion:layout_constraintTop_toBottomOf="@id/add_dog_pic_intro"/>
+
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/browse"
+            android:text="browse"
+            motion:layout_constraintTop_toBottomOf="@id/buttons_guide"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toStartOf="@id/recrop"/>
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recrop"
+            android:text="recrop"
+            motion:layout_constraintTop_toBottomOf="@id/buttons_guide"
+            motion:layout_constraintStart_toEndOf="@id/browse"
+            motion:layout_constraintEnd_toStartOf="@id/crop"/>
+        <Constraint
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/crop"
+            android:text="crop"
+            motion:layout_constraintTop_toBottomOf="@id/buttons_guide"
+            motion:layout_constraintStart_toEndOf="@id/recrop"
+            motion:layout_constraintEnd_toEndOf="parent"/>
+    </ConstraintSet>
+
+
+
+</MotionScene>

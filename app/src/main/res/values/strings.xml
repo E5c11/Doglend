@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Doglend</string>
+
+    <string name="register_welcome">Welcome to Doglet</string>
+    <string name="register_message">Please enter an Email and Password to register your an account</string>
+    <string name="login_message">Please enter your Email and Password to login in</string>
+    <string name="register_instead">New to Doglet? \n Register</string>
+    <string name="reg_instructions">Please enter your \npersonal information</string>
+    <string name="add_dog_intro">Add the details of your dog</string>
+    <string name="add_dog_pic_intro">Add pictures of your dog</string>
+
+    <string name="phone_asterisk">Phone number </string>
+    <string name="email_asterisk">Email address </string>
+    <string name="display_name_asterisk">Display name </string>
+    <string name="password_asterisk">Password </string>
+    <string name="passcon_asterisk">Confirm Password </string>
+    <string name="friend_search_asterisk">Search for a friend</string>
+    <string name="name_asterisk">First name </string>
+    <string name="surname_asterisk"> Surname </string>
+    <string name="dog_name">Name</string>
+    <string name="dog_breed">Breed</string>
+    <string name="dog_sex">Sex</string>
+    <string name="dog_age">Age</string>
+    <string name="dog_size">Size</string>
+    <string name="dog_energy">Energy</string>
+    <string name="dog_sociability">Sociability</string>
+    <string name="dog_stamina">Stamina</string>
+
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="submit">Submit</string>
+    <string name="online">online</string>
+    <string name="offline">offline</string>
+
+    <string name="time">Time</string>
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+
+    <string name="save">save</string>
+    <string name="edit">edit</string>
+
+    <string-array name="breeds">
+        <item>Border Collie</item>
+        <item>Labrador</item>
+        <item>Poodle</item>
+        <item>Duchshund</item>
+        <item>Jack Russel</item>
+        <item>Great Dane</item>
+        <item>Bull Terrier</item>
+        <item>German Shepherd</item>
+        <item>Golden Retriever</item>
+        <item>Dobermann</item>
+        <item>Husky</item>
+    </string-array>
+
+    <string-array name="sizes">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+        <item>Really big</item>
+    </string-array>
+
+    <string-array name="sociability">
+        <item>Grumpy</item>
+        <item>Shy</item>
+        <item>Friendly</item>
+        <item>Excited</item>
+        <item>Ecstatic</item>
+    </string-array>
+
+    <string-array name="energy">
+        <item>Dead</item>
+        <item>Calm</item>
+        <item>Normal</item>
+        <item>Active</item>
+        <item>Hyperactive</item>
+    </string-array>
+
+    <string name="google_maps_key">AIzaSyCEovUKpBe0k50ZdtKzHb9mqV2KjA9EHW8</string>
+    <string name="SHA_1">6B:A0:EF:08:A8:BC:BA:6C:2F:57:B8:31:51:B9:E1:FA:3D:86:58:73</string>
+</resources>

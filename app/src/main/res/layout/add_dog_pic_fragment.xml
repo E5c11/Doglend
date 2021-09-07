@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/dog_pp_motion"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.esc.doglend.ui.fragments.profiles.AddDogPicFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/add_dog_pic_intro"
+        android:text="@string/add_dog_pic_intro"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.theartofdev.edmodo.cropper.CropImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/dog_crop_pp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/add_dog_pic_intro"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/dog_pp"
+        android:visibility="invisible"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toBottomOf="@id/add_dog_pic_intro"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/buttons_guide"
+        app:layout_constraintTop_toBottomOf="@id/dog_crop_pp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/browse"
+        android:text="browse"
+        app:layout_constraintTop_toBottomOf="@id/buttons_guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/recrop"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/recrop"
+        android:text="recrop"
+        app:layout_constraintTop_toBottomOf="@id/buttons_guide"
+        app:layout_constraintStart_toEndOf="@id/browse"
+        app:layout_constraintEnd_toStartOf="@id/crop"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/crop"
+        android:text="crop"
+        app:layout_constraintTop_toBottomOf="@id/buttons_guide"
+        app:layout_constraintStart_toEndOf="@id/recrop"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/dog_banner"
+        android:elevation="3dp"
+        app:layout_constraintTop_toBottomOf="@id/browse"
+        android:background="@drawable/pic1"/>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

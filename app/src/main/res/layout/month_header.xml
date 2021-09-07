@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/previous_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        app:layout_constraintWidth_percent="0.33"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/current_month"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <include
+        android:id="@+id/current_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        app:layout_constraintWidth_percent="0.33"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/previous_month"
+        app:layout_constraintStart_toEndOf="@id/next_month"/>
+    <include
+        android:id="@+id/next_month"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        layout="@layout/weekday_button"
+        app:layout_constraintWidth_percent="0.33"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/current_month"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
