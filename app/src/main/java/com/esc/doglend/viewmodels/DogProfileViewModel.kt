@@ -1,13 +1,13 @@
 package com.esc.doglend.viewmodels
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
+import com.esc.doglend.entities.Dog
 import com.esc.doglend.repositories.ProfileFirebaseRepository
 import com.esc.doglend.utils.calendar.data.*
 import com.esc.doglend.utils.login.UserPreferences
+import dagger.assisted.Assisted
+import dagger.assisted.AssistedInject
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.collect
@@ -19,13 +19,14 @@ import java.util.*
 import javax.inject.Inject
 
 private const val TAG = "myT"
-
 @HiltViewModel
 class DogProfileViewModel @Inject constructor(
     private val firebaseRepository: ProfileFirebaseRepository,
-    userPreferences: UserPreferences
+    userPreferences: UserPreferences,
+//    @Assisted state: SavedStateHandle
 ): ViewModel() {
 
+//    val dog = state.get<Dog>("dog")
     private val loginPref = userPreferences.loginPref
     private val availability = MutableLiveData<List<Available>>()
     private val monthDays = MutableLiveData<List<MonthDay>>()

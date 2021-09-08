@@ -73,6 +73,9 @@
         <action
             android:id="@+id/action_addDogFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_addDogFragment_to_dogProfileFragment"
+            app:destination="@id/dogProfileFragment" />
     </fragment>
     <fragment
         android:id="@+id/addDogPicFragment"

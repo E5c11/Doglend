@@ -45,9 +45,9 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
                         breed = binding.breedAuto.text.toString(),
                         sex = Sex.valueOf(binding.sex.selectedItem.toString()),
                         age = binding.age.value,
-                        size = Size.valueOf(binding.size.value.toString()),
-                        sociability = Sociability.valueOf(binding.sociability.value.toString()),
-                        energy = Energy.valueOf(binding.energy.value.toString()),
+                        size = Size.valueOf(Size::class.enumValues()[binding.size.value]),
+                        sociability = Sociability.valueOf(Sociability::class.enumValues()[binding.sociability.value]),
+                        energy = Energy.valueOf(Energy::class.enumValues()[binding.energy.value]),
                         stamina = binding.stamina.value,
                         stamina_unit = StaminaUnit.valueOf(binding.staminaUnits.selectedItem.toString())
                     )
@@ -61,14 +61,15 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
             viewModel.addDogEvent.collect { event ->
                 when (event) {
                     is AddDogViewModel.AddDogEvents.SubmitDog -> {
-                        findNavController().navigate(AddDogFragmentDirections.actionAddDogFragmentToAddDogPicFragment())
+//                        findNavController().navigate(AddDogFragmentDirections.actionAddDogFragmentToAddDogPicFragment())
+                        findNavController().navigate(AddDogFragmentDirections.actionAddDogFragmentToDogProfileFragment(event.dog))
                         setProgressBar(View.GONE)
                     } is AddDogViewModel.AddDogEvents.SaveDogError -> {
                         setProgressBar(View.GONE)
                         Snackbar.make(requireView(), "User not found", Snackbar.LENGTH_LONG).show()
                     } is AddDogViewModel.AddDogEvents.UserNotFoundEvent -> {
-                    findNavController().navigate(AddDogFragmentDirections.actionAddDogFragmentToLoginFragment())
-                    setProgressBar(View.GONE)
+                        findNavController().navigate(AddDogFragmentDirections.actionAddDogFragmentToLoginFragment())
+                        setProgressBar(View.GONE)
                     }
                 }.exhaustive
             }
@@ -94,7 +95,7 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
 
     private fun setSex() {
         val sexAdapter = ArrayAdapter(requireContext(),
-            android.R.layout.simple_dropdown_item_1line, Sex::class.sexStringValues())
+            android.R.layout.simple_dropdown_item_1line, Sex::class.enumValues())
         binding.sex.adapter = sexAdapter
         setAge()
     }
@@ -107,7 +108,7 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
     private fun setSize() {
         binding.size.apply {
             minValue = 0; maxValue = 3; value = 1
-            displayedValues = Size::class.sizeStringValues()
+            displayedValues = Size::class.enumValues()
         }
         setSociability()
     }
@@ -115,7 +116,7 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
     private fun setSociability() {
         binding.sociability.apply {
             minValue = 0; maxValue = 4; value = 2
-            displayedValues = Sociability::class.sociabilityStringValues()
+            displayedValues = Sociability::class.enumValues()
         }
         setEnergy()
     }
@@ -123,7 +124,7 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
     private fun setEnergy() {
         binding.energy.apply {
             minValue = 0; maxValue = 4; value = 2
-            displayedValues = Energy::class.energyStringValues()
+            displayedValues = Energy::class.enumValues()
         }
         setStamina()
     }
@@ -131,7 +132,7 @@ class AddDogFragment: Fragment(R.layout.add_dog_fragemnt) {
     private fun setStamina() {
         binding.stamina.apply { minValue = 1; maxValue = 10; value = 5 }
         val staminaAdapter = ArrayAdapter(requireContext(),
-            android.R.layout.simple_dropdown_item_1line, StaminaUnit::class.staminaStringValues())
+            android.R.layout.simple_dropdown_item_1line, StaminaUnit::class.enumValues())
         binding.staminaUnits.adapter = staminaAdapter
     }
 

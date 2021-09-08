@@ -11,6 +11,9 @@ val <T> T.exhaustive: T
 fun KClass<out Enum<*>>.enumValues() =
     this.java.enumConstants.map(Enum<*>::name).toTypedArray()
 
+fun KClass<out Enum<*>>.enumStringValues() =
+    this.java.enumConstants.map { it.name }.toTypedArray()
+
 fun KClass<Sex>.sexStringValues() =
     this.java.enumConstants.map { it.value }.toTypedArray()
 
@@ -26,8 +29,6 @@ fun KClass<Energy>.energyStringValues() =
 fun KClass<StaminaUnit>.staminaStringValues() =
     this.java.enumConstants.map { it.value }.toTypedArray()
 
-fun KClass<out Enum<*>>.enumStringValues() =
-    this.java.enumConstants.map { it.name }.toTypedArray()
 
 fun <T> removeSlice(list: MutableList<T>, from: Int, end: Int) {
     list.removeAll(list.subList(from, end + 1))

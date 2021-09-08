@@ -56,6 +56,9 @@ class AddDogPicFragment: Fragment(R.layout.add_dog_pic_fragment) {
             binding.dogPp.visibility = View.VISIBLE
             cropImage()
         }
+        binding.submit.setOnClickListener {
+
+        }
     }
 
 }

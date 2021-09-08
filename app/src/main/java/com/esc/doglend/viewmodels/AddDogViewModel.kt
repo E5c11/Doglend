@@ -13,7 +13,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AddDogViewModel @Inject constructor(
     private val firebaseRepository: ProfileFirebaseRepository,
-    private val userPreferences: UserPreferences
+    userPreferences: UserPreferences
 ): ViewModel() {
 
     private val loginPref = userPreferences.loginPref
@@ -27,7 +27,7 @@ class AddDogViewModel @Inject constructor(
             }
             else {
                 if (firebaseRepository.addDog(dog, loginPref.uid))
-                    addDogChannel.send(AddDogEvents.SubmitDog)
+                    addDogChannel.send(AddDogEvents.SubmitDog(dog))
                 else addDogChannel.send(AddDogEvents.SaveDogError)
             }
 
@@ -35,7 +35,7 @@ class AddDogViewModel @Inject constructor(
     }
 
     sealed class AddDogEvents {
-        object SubmitDog: AddDogEvents()
+        data class SubmitDog(val dog: Dog): AddDogEvents()
         object SaveDogError: AddDogEvents()
         object UserNotFoundEvent: AddDogEvents()
     }
